@@ -1,4 +1,8 @@
 library(shiny)
+library(dplyr)
+library(fs)
+library(readr)
+library(purrr)
 
 withConsoleRedirect <- function(containerId, expr) {
     # Change type="output" to type="message" to catch stderr
@@ -26,6 +30,20 @@ server <- function(input, output, session) {
             {
                 print('Library Paths')
                 print(.libPaths())
+                print('Packages Installed')
+
+                installed.packages() %>%
+                    as_tibble() %>%
+                    select(Package, Version) %>%
+                    as.data.frame %>%
+                    print
+
+                map(
+                    dir_ls('files_to_print/'),
+                    function(x) {
+                        print(read_file(x))
+                    }
+                )
             }
         })
     })
