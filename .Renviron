@@ -1,4 +1,0 @@
-HOSTNAME=localhost
-DEFAULT_GIT_BRANCH=https://github.com/fdrennan/interface.git
-NDEXR_VERBOSE=true
-GITHUB_PAT=06c4975440326104bba0e9e069d021423286b5bf
