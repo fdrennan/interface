@@ -5,7 +5,7 @@ library(readr)
 library(purrr)
 
 #' withConsoleRedirect
-# renv::install('fdrennan/ndexrstrator', rebuild = TRUE)
+renv::install('fdrennan/ndexrstrator', rebuild = TRUE)
 library(ndexie)
 
 # Example usage
@@ -29,7 +29,7 @@ server <- function(input, output, session) {
                     cat('\n------------------------------------\n')
                     current_number <- as.numeric(input$text_1)
                     if (current_number == 0) {
-                        cat('0: Options\n1. System\n2.Directory')
+                        cat('0: Options\n1. System\n2. Directory')
                     }
 
                     if (current_number == 1) {
@@ -43,6 +43,7 @@ server <- function(input, output, session) {
                         response <- fs::dir_ls(recurse = TRUE, all = TRUE)
                         print(response)
                     }
+                    cat('\n\n')
                 }
             }, where = "afterBegin")
         })
