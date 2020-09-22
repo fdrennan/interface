@@ -1,2 +1,3 @@
 HOSTNAME=localhost
 DEFAULT_GIT_BRANCH=https://github.com/fdrennan/interface.git
+NDEXR_VERBOSE=true
