@@ -1,0 +1,2 @@
+HOSTNAME=localhost
+DEFAULT_GIT_BRANCH=https://github.com/fdrennan/interface.git
