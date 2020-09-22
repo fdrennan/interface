@@ -14,6 +14,8 @@ services:
       - ./main.R:/home/productor/main.R
       - ./.Renviron.docker:/home/productor/.Renviron
       - ./shiny_logs:/var/log/shiny-server
+      - ./app.R:/home/productor/app/app.R
+      - ./files_to_print:/home/productor/app/files_to_print
     user: 'root'
     ports:
       - "80:3000"

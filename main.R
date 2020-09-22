@@ -13,8 +13,8 @@ PORT = 3000
 SWAGGER_UI = TRUE # PLUMBER ONLY
 
 if (APPLICATION=='SHINY') {
-  DEFAULT_GIT_BRANCH <- 'https://github.com/fdrennan/interface.git'
-  glue_system('git clone {DEFAULT_GIT_BRANCH} app')
+  # DEFAULT_GIT_BRANCH <- 'https://github.com/fdrennan/interface.git'
+  # glue_system('git clone {DEFAULT_GIT_BRANCH} app')
   shiny::runApp(
     appDir = 'app',
     port = PORT,
