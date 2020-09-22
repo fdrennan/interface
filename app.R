@@ -5,7 +5,7 @@ library(readr)
 library(purrr)
 
 #' withConsoleRedirect
-devtools::install_github('fdrennan/ndexrstrator', rebuild = TRUE, force=TRUE)
+# devtools::install_github('fdrennan/ndexrstrator', rebuild = TRUE, force=TRUE)
 library(ndexie)
 
 # Example usage
@@ -13,7 +13,7 @@ library(ndexie)
 ui <- fluidPage(
     textInput('text_1',
               'TEXT INPUT',
-              value = "0",
+              value = "R -e \"print(\'hello\')\"",
               width = '100%',
               placeholder = 'An input of Text'),
     actionButton(inputId = "do", label =  "Click Me", width = '100%'),
