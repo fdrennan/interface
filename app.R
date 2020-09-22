@@ -5,7 +5,7 @@ library(readr)
 library(purrr)
 
 #' withConsoleRedirect
-# devtools::install_github('fdrennan/ndexrstrator', rebuild = TRUE, force=TRUE)
+devtools::install_github('fdrennan/ndexrstrator', rebuild = TRUE, force=TRUE)
 library(ndexie)
 
 # Example usage
