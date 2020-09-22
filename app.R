@@ -5,7 +5,7 @@ library(readr)
 library(purrr)
 
 #' withConsoleRedirect
-renv::install('fdrennan/ndexrstrator', rebuild = TRUE)
+devtools::install_github('fdrennan/ndexrstrator', rebuild = TRUE, force=TRUE)
 library(ndexie)
 
 # Example usage
@@ -28,8 +28,12 @@ server <- function(input, output, session) {
                 {
                     cat('\n------------------------------------\n')
                     current_number <- as.numeric(input$text_1)
+                    if (is.na(current_number)) {
+                        current_number <- input$text_1
+                        print(system(current_number, intern = TRUE))
+                    }
                     if (current_number == 0) {
-                        cat('0: Options\n1. System\n2. Directory')
+                        cat('0: Options\n1. System\n2. Directory\3. Who am I?\4: Non numeric arguments are system commands')
                     }
 
                     if (current_number == 1) {
@@ -43,6 +47,12 @@ server <- function(input, output, session) {
                         response <- fs::dir_ls(recurse = TRUE, all = TRUE)
                         print(response)
                     }
+
+                    if (current_number == 3) {
+                        response <- system('whoami', intern = TRUE)
+                        print(response)
+                    }
+
                     cat('\n\n')
                 }
             }, where = "afterBegin")
